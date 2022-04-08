@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>FightOS</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  
+  <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/animate.css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+
+  <!-- =======================================================
+  * Template Name: Medilab - v4.7.1
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      
+      
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">FightOS</a></h1>
+      
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
+
+      
+      <a href="{{ url_for('logout') }}" class="appointment-btn scrollto"><span class="d-none d-md-inline">Logout</span></a>
+
+
+    </div>
+    <div class="container d-flex align-items-center">
+      &nbsp;  &nbsp;
+      <p style="font-size:14px ; ">Happy cycles :)</p>
+    </div>
+  </header><!-- End Header -->
+
+
+
+  <section id="appointment" class="appointment section-bg">
+    <div class="container">
+      
+     <br><br><br><br><br><br>
+     <div class="section-title">
+       <div style="color:darkslategrey;">
+        {% for message in get_flashed_messages()%}
+        {% if "successfully" in message %}
+        <p style="color:darkgreen;">{{ message }}</p>
+        {%else%}
+        <p style="color:darkred;">{{ message }}</p>
+        {%endif%}
+        {% endfor %}
+      </div>
+      
+      <br><br>
+      <h2>Upload Ultra Sound Image</h2>
+      <p>One step away from detecting PCOS.</p>
+    </div>
+
+    <form enctype="multipart/form-data" action="/uploadimg" method="post" role="form" class="php-email-form">
+      <div class="row">
+        
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+          
+        </div>
+        <div class="row">
+          
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            
+
+            <input class="form-control" id="file" name="file" type="file">
+            
+            
+          </div>
+        </div>
+
+        
+        <br>
+        <br>
+
+        <br>
+        <br>
+        <div class="text-center"><button type="submit">Generate Report</button></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="section-title">
+
+          {% if "not" in prediction_text %}
+          <p style="color:darkgreen; font-size: 30px;">{{ prediction_text }}</p>
+          {%else%}
+          <p style="color:darkred; font-size: 30px;">{{ prediction_text }}</p>
+          {%endif%}
+          
+        </div>
+      </form>
+
+    </div>
+  </section><!-- End Upload Section -->
+  <br>
+  <br>
+  <!-- ======= Departments Section ======= -->
+  <section id="Symptomps" class="Symptomps">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Solutions</h2>
+        <p>These are some of the possible solutions for PCOS</p> 
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-lg-3">
+          <ul class="nav nav-tabs flex-column">
+            <li class="nav-item">
+              <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Irregular Menstrual Cycle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Acne</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Hirsutism</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Obesity</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Hair Fall</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-6">Infertility</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-7">Insulin Resistance</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-8">Fatigue</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-9">
+          <div class="tab-content">
+            <div class="tab-pane active show" id="tab-1">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Irregular Menstrual Cycle</h3>
+                  <p class="fst-italic">Change in hormonal levels is the main cause of irregular ovulation</p>
+                  <p>Oral Contraceptives
+                    Also called birth control pills or "the Pill," hormonal contraceptives can be used for the long-term treatment of women with PCOS who do not wish to become pregnant,1 and in fact they are the primary treatment for these women. Oral contraceptive pills contain a combination of the hormones estrogen and progestin. In women with PCOS, these hormones:
+                    <ul>
+                      <li>Make menstrual periods more regular</li>
+                      <li>Reduce the level of androgens produced by the ovaries, leading to reduction in androgen activity</li>
+                      <li>Help clear acne and reduce excess hair growth</li>
+                    </ul>
+                  </p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{{url_for('static', filename='img/solutions/period.png')}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-2">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Acne</h3>
+                  <p class="fst-italic">Trust me every other woman had it </p>
+                  <p>Treating the underlying hormonal imbalance is the only way to clear PCOS-related acne. If you think your acne is related to PCOS, talk to your doctor or dermatologist. 
+                    It’s important to know that even the best PCOS acne treatment will do little without a good skin care routine.
+
+                    Retinoids (pronounced RET-n-oids), antibacterial agents, and antibiotics may be used to treat acne. These products may be available in pills, creams, or gels. The specific treatment depends on the severity of the acne and how long it has been visible. Because retinoids can cause birth defects, you should not use them if you want to become pregnant.
+                    <br>
+                    How to prevent acne
+                    While there’s no completely foolproof way to get rid of acne forever, there are habits you can add to your routine that may help keep breakouts at bay. Here are some ideas:
+                    <ul>
+                      <li>
+                      Wash your face properly. To help prevent pimples, it’s important to remove excess oil, dirt, and sweat daily.</li>
+                      <li>
+                      Use a moisturizer. Even if you have acne, keeping your skin hydrated is essential. When skin is dry, it produces oil to counterbalance, which may result in excess sebum and clogged pores.</li>
+                      <li>
+                      Limit makeup. Using a lot of makeup may clog pores and trigger breakouts. If you do use makeup, make sure it’s noncomedogenic and fragrance-free to prevent skin irritation. Always wash makeup off, especially before bedtime.</li>
+                      <li>
+                      Resist touching your face. Touching your face can transfer bacteria and pore-clogging impurities onto your skin.</li>
+                      <li>
+                      Limit sun exposure. Frequent sun exposure dehydrates the skin, which, over time, causes it to produce more oil and block pores.</li>
+                      <li>
+                      Don’t pop pimples. Popping pimples may cause bleeding, severe scarring, or infection. It may also increase inflammation and clog surrounding pores, making your pimple problem worse.</li>
+                    </ul>
+                  </p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{{url_for('static', filename='img/solutions/acne.jpg')}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-3">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Hirsutism</h3>
+                  <p class="fst-italic">Having Facial hair is normal</p>
+                  <p>There are many ways to remove excess or unwanted hair or to hide this hair without actually removing it. Women with PCOS can use the methods below instead of or in combination with other approaches
+
+                    Daily application of an eflornithine (pronounced ee-FLOOR-nih-theen) cream slows hair growth, especially on the face. This drug works by blocking an enzyme that is needed by hair to grow.
+                    This cream should not be used in pregnant women, and thus you should talk to your health care provider about its risks and benefits before using it, especially if you want to get pregnant.
+                    Shaving, bleaching, plucking, waxing, and using depilatories (creams that dissolve hair, pronounced dih-PIL-uh-tawr-ees) are some of the more common ways of removing or hiding unwanted hair. Some of these methods, such as shaving and plucking, are associated with skin irritation and the development of ingrown hairs.
+                    Electrolysis (pronounced ih-lek-TROL-uh-sis), laser hair removal, and intense pulsed light (IPL) therapy are other options, but they are often expensive and may require multiple treatments.1 Electrolysis uses an electric current applied to each hair follicle to destroy its root. Laser hair removal involves shooting a laser beam at each hair follicle to destroy its root. IPL therapy uses an intense flash of light in a specific wavelength that targets the melanin, or color, in hair to effectively kill the hair follicle.
+                  </p>
+                </div>
+                <div class="col-lg-4 text-center order-1 order-lg-2">
+                  <img src="{{url_for('static', filename='img/solutions/hair.jpg')}}" alt="" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab-4">
+              <div class="row gy-4">
+                <div class="col-lg-8 details order-2 order-lg-1">
+                  <h3>Obesity</h3>
+                  <p class="fst-italic">There is no replacement for EXERCISE.</p>
+                  <p>Women with PCOS may need  extra efforts to lose weight but the weight can be managed by following things:
+                    <ul> 
+                      <li> Reduce Your Carbs Intake. Lowering your carbs consumption may help manage PCOS because carbs impact on insulin levels. 
+                        <li> Get Plenty of Fibre.</li>
+                        <li> Eat Enough Protein. </li>
+                        <li> Eat Healthy Fats.</li>
+                        <li> Practice Mindful Eating.</li>
+                        <li> Limit Processed Foods and Added Sugars.</li>
+                        <li> Exercise Regularly</li>
+                      </p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{{url_for('static', filename='img/solutions/obese.jpg')}}" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-5">
+                  <div class="row gy-4">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Hair Fall</h3>
+                      <p class="fst-italic">They will grow back</p>
+                      <p>Hair fall is another symptom which majorly get covered while balancing other symptoms like balancing weight and menstrual cycles.  
+                       
+
+                        There’s certainly no medical need to treat PCOS-related hair loss. And in many cases, you can minimise the appearance of PCOS-related hair loss with some changes to how you style your hair.
+
+                        For a widening part, try:
+
+                        experimenting with parting your hair in other areas
+                        getting bangs that start further up on the top of your head
+                        applying a root cover-up powder on your scalp, like this one, which is waterproof and available in different shades
+                        For thinning hair, try:
+
+                        wearing a partial wig, sometimes called a wig fall, to cover your thinning hair without damaging glue or clips
+                        using volumizing hair products to add lift and make your hair appear fuller
+                        getting shorter, layered hair style to add volume and fullness
+                        For bald patches, try:
+
+                        a hairstyle that will keep hair over the bald area, such as a top knot or low ponytail
+                        a hair band or scarf wide enough to cover the spot
+                        a partial wig or wig fall
+                      </p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{{url_for('static', filename='img/solutions/hairfall.jpg')}}" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-6">
+                  <div class="row gy-4">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Infertility</h3>
+                      <p class="fst-italic">Don't worry it does not make you any less woman</p>
+                      <p>With treatment, most women with PCOS are able to get pregnant.
+
+                        The majority of women can be successfully treated with a short course of tablets taken at the beginning of each cycle for several cycles.
+                        A medicine called clomifene is usually the first treatment recommended for women with PCOS who are trying to get pregnant.
+                      </p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{{url_for('static', filename='img/solutions/infertility.jpg')}}" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-7">
+                  <div class="row gy-4">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Insuline Resistance</h3>
+                      <p class="fst-italic">Take your health seriously</p>
+                      <p>Insuline Sensitive Agents Prescribed by doctor
+                        These types of medications make the body more responsive to insulin and keep glucose levels more stable.1,11 In women with PCOS, these medications can help:
+                        <ul>
+                          <li>Clear acne and reduce hair growth</li>
+                          <li>Improve weight loss</li>
+                          <li>Lower cholesterol levels</li>
+                          <li>Make periods more regular</li>
+                          <li>Slightly reduce infertility associated with PCOS12</li>
+                        </ul>
+
+                        Clomifene encourages the monthly release of an egg from the ovaries (ovulation).
+
+                        If clomifene is unsuccessful in encouraging ovulation, another medicine called metformin may be recommended. 
+                      </p>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="{{url_for('static', filename='img/solutions/insulres.jpg')}}" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-8">
+                  <div class="row gy-4">
+                    <div class="col-lg-8 details order-2 order-lg-1">
+                      <h3>Fatigue</h3>
+                      <p class="fst-italic">Have a beauty sleep</p>
+                      <p>
+                        <ul>
+                          <li>Get enough sleep – two-thirds of us suffer from sleep problems, and many people don’t get the sleep they need to stay alert through the day. Some recommendations on getting a good night’s sleep include: go to bed and get up in the morning at the same time every day, avoid naps through the day, and have a warm bath or shower before bed.</li>
+                          <li>Limit caffeine – too much caffeine, particularly in the evening, can cause insomnia. Limit caffeinated drinks to five or less per day, and avoid these types of drinks. </li>
+                          <li>Don’t smoke – cigarette smoke contains many harmful substances. There are many reasons why smokers typically have lower energy levels than non-smokers. For example, for the body to make energy it needs to combine glucose with oxygen, but the carbon monoxide in cigarette smoke reduces the amount of oxygen available in the blood. </li>
+                          <li>Increase physical activity – physical activity boosts energy levels, while a sedentary lifestyle is a known cause of fatigue. Physical activity has many good effects on mental health and reduces stress levels.</li>
+                        </ul></p>
+                      </div>
+                      <div class="col-lg-4 text-center order-1 order-lg-2">
+                        <img src="{{url_for('static', filename='img/solutions/fatigue.jpg')}}" alt="" class="img-fluid">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section><!-- End Departments Section -->
+        
+        <br>
+        <br>
+        
+
+        <div id="preloader"></div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="{{url_for('static', filename='vendor/purecounter/purecounter.js')}}" ></script>
+        <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{url_for('static', filename='vendor/glightbox/js/glightbox.min.js')}}" ></script>
+        <script src="{{url_for('static', filename='vendor/swiper/swiper-bundle.min.js')}}" ></script>
+        <script src="{{url_for('static', filename='js/validate.js')}}" ></script>
+        
+
+        <!-- Template Main JS File -->
+        <script src="{{url_for('static', filename='js/main.js')}}" ></script>
+
+      </body>
+
+      </html>
