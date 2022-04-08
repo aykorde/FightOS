@@ -26,3 +26,4 @@ The integration of project is done in python flask.
 -  Fullfill the dependencies of libraries using 'pip'
 -  See website at url: 'localhost:5000'
  
+ The html template was taken from https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ for UI
