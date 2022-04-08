@@ -10,7 +10,7 @@ The data was not directly available on internet easily when we did the project s
 
 The data folder contains 2 subfolders 'train' and 'test' where data is already splitted for machine learning model and each train and test folder has 2 subfolders 'infected' and 'notinfected' folders.
 
-## Preprocessing and Model Bulding
+## Preprocessing and Model Building
 The file for preprocessing, bulinding a CNN model is uploded here for reference. During preprocessing images are converted into gray format and a folder called 'graydata' is generated when you run that file.
 
 ## Integration
