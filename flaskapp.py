@@ -138,7 +138,7 @@ def uploadimg():
         uploaded_file_extension = fileobj.filename.rsplit(".",1)[1]
             #validating file extension
         if(uploaded_file_extension.upper() in file_extensions):
-            destination_path= f"data/{fileobj.filename}"
+            destination_path= f"data/test/{fileobj.filename}"
             fileobj.save(destination_path)
             try:
                 cursor = mysql.connection.cursor()
