@@ -1,7 +1,9 @@
 # FightOS
 PCOS detection using ultra sound images
+
 ## Problem Statement
 In today's world women are working, perusing dreams but while doing this most of them are facing challenges on all levels and on physical level PCOS is on top. If left undiagnosed it can cause serious health issues like diabetes, infertility and many more. Having PCOS affects woman's not only health but also her performance and confidence. FightOS acknowledges this problem and brings you a platform to detect PCOS with the help of machine learning model.
+
  ## About Project
 We developed 'FightOS' website to provide support for every woman who may or may not have PCOS. We took data from our friends used image augmentation methods and with the help of convolution neural networks (CNN) we developed a model with 98% accuracy. User need to upload the image of ultrasound and our model will provide with result whether she has PCOS or not and also gives some possible solution along with information about its symptoms, doctors opinion, link of videos for awareness, our contact.
 
