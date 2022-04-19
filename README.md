@@ -8,6 +8,8 @@ We developed 'FightOS' website to provide support for every woman who may or may
 ## Data 
 The data was not directly available on internet easily when we did the project so, we gathered primary data, used image augmentation methods and also uploaded the data on kaggle.
 
+Data link - https://www.kaggle.com/code/aykorde/fightos-cnn-models/data
+
 The data folder contains 2 subfolders 'train' and 'test' where data is already splitted for machine learning model and each train and test folder has 2 subfolders 'infected' and 'notinfected' folders.
 
 ## Preprocessing and Model Building
@@ -26,7 +28,7 @@ The integration of project is done in python flask.
 -  Fullfill the dependencies of libraries using 'pip'
 -  See website at url: 'localhost:5000'
 
-## Implemenation video
+## Implementation video
 - https://www.linkedin.com/posts/anagha-choudhari19_project-imageprocessing-deeplearning-activity-6921739280012779520-Vkzr?utm_source=linkedin_share&utm_medium=member_desktop_web
 
 
